@@ -49,3 +49,8 @@ INNER JOIN Generos ON Generos.Id = FilmesGenero.IdGenero WHERE Genero ='Mistéri
 
 SELECT Nome, PrimeiroNome, UltimoNome, Papel FROM Filmes INNER JOIN ElencoFilme ON Filmes.id = ElencoFilme.IdFilme
 INNER JOIN Atores ON Atores.Id = ElencoFilme.IdAtor
+
+--13- EXTRA Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel e seu Genero EXTRA
+
+SELECT Nome, PrimeiroNome, UltimoNome, Papel, Generos.Genero  FROM Filmes INNER JOIN ElencoFilme ON Filmes.id = ElencoFilme.IdFilme
+INNER JOIN Atores ON Atores.Id = ElencoFilme.IdAtor INNER JOIN FilmesGenero ON FilmesGenero.IdFilme = Filmes.id INNER JOIN Generos ON FilmesGenero.IdGenero = Generos.id	
